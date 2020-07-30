@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+}
+
+.rectangle {
+  width: 100px;
+  height: 100px;
+  background-color: orange;
+  margin-bottom: 10px;
+}
+
+.middle {
+   background-color: purple;
+}
