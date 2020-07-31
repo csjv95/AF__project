@@ -1,7 +1,12 @@
 body {
   margin: 0;
 }
-
+.btnContainer {
+  position: fixed;
+}
+.scrollBtn {
+  margin: 10px;
+}
 .rectangle {
   width: 200px;
   height: 200px;
