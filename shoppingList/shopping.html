@@ -4,37 +4,35 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shopping List</title>
-  <link rel="stylesheet" href="shopping.css">
   <script src="https://kit.fontawesome.com/439c4a0fb6.js" crossorigin="anonymous"></script>
-  <script src="shopping.js" defer></script>
+  <link rel="stylesheet" href="./shopping.css">
+  <script src="./shopping.js" defer></script>
 </head>
 
 <body>
   <header>
-    <h1>ShoppingList</h1>
+    <h1>Shopping List</h1>
   </header>
 
   <main>
-   <ul class="item__list">
-     <li class="item">
-       <div class="item__container">
-        <span class="item__name">Beef</span>
-        <button class="item__delete">
-          <i class="fas fa-trash"></i>
-        </button>
-      </div>
-      <div class="underLine"></div>
-     </li>
-   </ul>
+    <ul class="item__list">
+      <li class="item">
+        <div class="item__container">
+          <span class="item__name">beef</span>
+          <button class="item__delete">
+            <i class="far fa-trash-alt"></i>
+          </button>
+        </div>
+        <div class="line"></div>
+      </li>
+    </ul>
   </main>
 
   <footer>
-    <section class="footer">
-      <input type="text" class="footer__input">
-      <button class="puls__btn">
-        <i class="fas fa-plus"></i>
-      </button>
-    </section>
+    <input type="text" class="get__write">
+    <button class="plus__btn">
+      <i class="fas fa-plus-circle plus"></i>
+    </button>
   </footer>
 </body>
 </html>
