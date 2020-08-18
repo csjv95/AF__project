@@ -5,12 +5,17 @@ const itemList = document.querySelector('.item__list');
 const plusBtn = document.querySelector('.plus__btn');
 const input = document.querySelector('.get__write');
 
-
-
-
+//when clicked the plus btn
 plusBtn.addEventListener('click', () => {
   plus();
 })
+
+//when keydown enter
+input.addEventListener('keydown', (e) => {
+  if(e.keyCode === 13){
+    plus();
+  }
+});
 
 const plus = () => {
   // get user input value
@@ -26,6 +31,9 @@ const plus = () => {
 
   //add item in itemContainer
   itemList.appendChild(itemRow);
+
+  //scrolling
+  itemRow.scrollIntoView({behavior: "smooth", block : "end"});
 
   //input default
   input.value = '';
@@ -50,7 +58,7 @@ const createItem = (inputValue) => {
 
   itemDelete.addEventListener('click', () => {
     itemList.removeChild(item);
-  })
+  });
 
   const line = document.createElement('div');
   line.setAttribute('class','line');
