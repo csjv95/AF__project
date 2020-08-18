@@ -1,0 +1,22 @@
+.outer {
+  background-color: aqua;
+  width: 600px;
+  height: 600px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.middle {
+  background-color: blue;
+  width: 350px;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  width: 100px;
+  height: 100px;
+}
