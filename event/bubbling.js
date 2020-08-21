@@ -13,3 +13,4 @@ middle.addEventListener('click', () => {
 btn.addEventListener('click', () => {
   console.log('btn');
 });
+
