@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+ul {
+  padding: 0;
+}
+
+.box {
+  width: 50%;
+  height: 100px;
+  background-color: brown;
+  margin-bottom: 10px;
+}
+
+.change__color {
+  background-color: blue;
+}
