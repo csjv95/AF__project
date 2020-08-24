@@ -5,6 +5,12 @@ const itemList = document.querySelector('.item__list');
 const plusBtn = document.querySelector('.plus__btn');
 const input = document.querySelector('.get__write');
 
+itemList.addEventListener('click', ()=> {
+  if(event.target.className === 'item__delete') {
+    console.log('hi');
+  }
+});
+
 //when clicked the plus btn
 plusBtn.addEventListener('click', () => {
   plus();
