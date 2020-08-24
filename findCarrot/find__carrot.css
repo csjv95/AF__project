@@ -1,1 +1,69 @@
+body{
+  margin: 0;
+  font-family: 'Noto Sans KR', sans-serif;
+  text-align: center;
+}
+
+header {
+  background-color: yellow;
+}
+.game {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 800px;
+  height: 500px;
+  background: url(./img/background.png) center/cover;
+  border:1px solid black;
+  border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+}
+
+.game__controller {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game__start__btn {
+  margin: 1%;
+  font-size: 50px;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 300ms ease-in;
+}
+
+.game__start__btn:hover {
+  transform: scale(1.2);
+}
+
+.game__count {
+  margin: 1%;
+  font-size: 20px;
+}
+
+.carrot__count {
+  margin: 1%;
+  font-size: 20px;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.game__field {
+  width: 100%;
+  height: 100%;
+  margin-top: 15%;
+  background-color: blue;
+  border-bottom-left-radius: 2%;
+  border-bottom-right-radius: 2%;
+}
+
 
