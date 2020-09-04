@@ -8,43 +8,6 @@ startBtn.addEventListener('click', () => {
   count();
 });
 
-const startGame = () => {
-  const carrotSize = 80;
-  //create carrot on gameField
-  for(let i = 0; i<11; i++){
-  const carrotImg = document.createElement('img');
-  const x = ranadomNum(rectGameField.left,rectGameField.right-carrotSize);
-  const y = ranadomNum(rectGameField.top,rectGameField.bottom-carrotSize);
-
-  carrotImg.setAttribute('src','./img/carrot.png');
-  carrotImg.style.position = 'absolute';
- 
-  carrotImg.style.left =`${x}px`;
-  carrotImg.style.top =`${y}px`;
-
-  gameField.appendChild(carrotImg);
-  }
-  //create bug on gameField
-  for(let i = 0; i<11; i++){
-    const bugImg = document.createElement('img');
-    const x = ranadomNum(rectGameField.left,rectGameField.right-carrotSize);
-    const y = ranadomNum(rectGameField.top,rectGameField.bottom-carrotSize);
-
-    bugImg.setAttribute('src','./img/bug.png');
-    bugImg.style.position = 'absolute';
-  
-    bugImg.style.left =`${x}px`;
-    bugImg.style.top =`${y}px`;
-    
-    gameField.appendChild(bugImg);
-    }
-};
-
-//random
-function ranadomNum(min, max) {
-  return Math.random() * (max - min) + min;
-}
-
 // remove target
 gameField.addEventListener ('click', (e) => {
   if(e.target === e.target) {
@@ -53,11 +16,43 @@ gameField.addEventListener ('click', (e) => {
   }
 });
 
+//start game
+function startGame() {
+  addItem('carrot','10','./img/carrot.png','absolute');
+  addItem('bug','10','./img/bug.png','absolute');
+}
+
+//add items carrot and bug
+function addItem (className,count,imgsPath,position) {
+  const carrotSize = 80;
+  //create carrot on gameField
+  for(let i = 0; i < count; i++){
+  const item = document.createElement('img');
+
+  const x = ranadomNum(rectGameField.left,rectGameField.right-carrotSize);
+  const y = ranadomNum(rectGameField.top,rectGameField.bottom-carrotSize);
+  
+  item.setAttribute('class',className);
+  item.setAttribute('src',imgsPath);
+  item.style.position = position;
+ 
+  item.style.left =`${x}px`;
+  item.style.top =`${y}px`;
+
+  gameField.appendChild(item);
+  }
+};
+
+//random
+function ranadomNum(min, max) {
+  return Math.random() * (max - min) + min;
+}
+
 //time
-const count = () => {
+function count() {
   window.setTimeout(slowAlert, 3000);
 };
 
-const slowAlert = ()=> {
+function slowAlert() {
   alert('Too late');
-}
+};
