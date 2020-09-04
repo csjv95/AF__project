@@ -36,14 +36,11 @@ body{
   transform: scale(1.2);
 }
 
-.game__count {
-  margin: 1%;
-  font-size: 20px;
-}
-
+.game__count,
 .carrot__count {
   margin: 1%;
   font-size: 20px;
+  visibility: hidden;
 }
 
 main {
