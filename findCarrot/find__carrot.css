@@ -4,10 +4,6 @@ body{
   text-align: center;
 }
 
-header {
-  background-color: yellow;
-}
-
 .game {
   margin: 0 auto;
   margin-top: 20px;
