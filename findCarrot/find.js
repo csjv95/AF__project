@@ -4,11 +4,15 @@ let CARROT__COUNT = 10;
 let GAME__DURATION = 5;
 let stopWatch = undefined;
 let started = false;
+
+const game = document.querySelector('.game');
 const startBtn = document.querySelector('.game__start__btn');
 const gameCount =document.querySelector('.game__count');
 const carrotCount = document.querySelector('.carrot__count');
 const gameField = document.querySelector('.game__field');
 const rectGameField = gameField.getBoundingClientRect();
+const popUp = document.querySelector('.pop-up');
+const resumeBtn = document.querySelector('.pop-up__refresh');
 
 //when clicked start btn
 startBtn.addEventListener('click', () => {
@@ -28,6 +32,8 @@ gameField.addEventListener ('click', (e) => {
   }
 });
 
+
+
 //start game
 function startGame() {
   setGameFeild();
@@ -35,6 +41,7 @@ function startGame() {
   showGameBox();
   count();
 }
+
 function setGameFeild() {
   // reset gameFeild
   gameField.innerHTML ='';
@@ -98,8 +105,25 @@ function gameTimer() {
 
 function stopGame() {
   stopGameTimer();
+  hiddenBtn();
+  opcityDown();
+  popUpShow();
+  
 }
 
 function stopGameTimer() {
   clearInterval(stopWatch);
+}
+
+function hiddenBtn() {
+  startBtn.style.visibility = 'hidden';
+}
+
+function popUpShow() {
+  popUp.style.visibility = 'visible';
+}
+
+function opcityDown() {
+  game.style.opacity = '20%';
+  popUp.style.opacity = '90%';
 }
