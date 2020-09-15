@@ -2,7 +2,7 @@
 const CARROT__SIZE = 80;
 
 let CARROT__COUNT = 10;
-let GAME__DURATION = 10;
+let GAME__DURATION = 5;
 let stopWatch = undefined;
 let started = false;
 let score = 0;
@@ -17,6 +17,12 @@ const popUp = document.querySelector('.pop-up');
 const restartBtn = document.querySelector('.pop-up__refresh');
 const gameCountNum = gameCount.querySelector('.fa-stopwatch')
 const remainBug = popUp.querySelector('.remain');
+
+const bgSound = new Audio('./sound/bg.mp3');
+const bugPullSound = new Audio('./sound/bug_pull.mp3');
+const carrotPullSound = new Audio('./sound/carrot_pull.mp3');
+const gameWinSound = new Audio('./sound/game_win.mp3');
+const alertSound = new Audio('./sound/alert.wav');
 
 //when clicked start btn
 startBtn.addEventListener('click', () => {
@@ -37,6 +43,7 @@ gameField.addEventListener ('click', (e) => {
   }
   if(target.matches('.carrot')) {
     score++;
+    playAudio(carrotPullSound);
     target.remove();
     updateScore();
     if(CARROT__COUNT === score) {
@@ -44,6 +51,7 @@ gameField.addEventListener ('click', (e) => {
       finishGame();
     }
   }else if(target.matches('.bug')) {
+    playAudio(bugPullSound);
     target.classList.add('js_catch__bug');
     stopGameTimer();
     finishGame();
@@ -61,7 +69,7 @@ restartBtn.addEventListener('click', () => {
 function startGame() {
   started = true;
   score = 0;
-  playAudio();
+  playAudio(bgSound);
   setGameFeild();
   changeStartBtn();
   showGameBox();
@@ -72,10 +80,13 @@ function startGame() {
 //stop game
 function stopGame() {
   started = false;
+  pauseAudio(bgSound);
   stopGameTimer();
   hiddenBtn();
   opcityDown();
+  playAudio(alertSound);
   popUpShow();
+ 
 }
 
 function setGameFeild() {
@@ -180,5 +191,14 @@ function finishGame() {
   remainBug.innerText = ` Remain Carrot :${CARROT__COUNT-score}`
   opcityDown();
   popUpShow();
+  pauseAudio(bgSound);
 }
 
+function playAudio(sound) {
+  sound.currentTime = 0;
+  sound.play();
+}
+
+function pauseAudio(sound) {
+  sound.pause();
+}
