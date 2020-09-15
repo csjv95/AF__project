@@ -73,7 +73,6 @@ main {
   border: 1px solid #adff2f;
   border-radius: 2%;
   transform: translate(200%,-150%);
-  visibility: hidden;
 }
 
 .pop-up__refresh {
@@ -81,6 +80,21 @@ main {
   padding: 10%;
 }
 
+.hidden {
+  visibility: hidden;
+}
 
+.carrot,
+.bug {
+  transition: transform 100ms ease-out;
+  cursor: pointer;
+}
 
+.carrot:hover,
+.bug:hover{
+  transform: scale(1.1);
+}
 
+.js_catch__bug {
+  transform: scale(1.5);
+}
